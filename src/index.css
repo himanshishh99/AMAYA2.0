@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 33% 98%;
+    --foreground: 215 28% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 28% 17%;
+
+    --muted: 210 33% 95%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom AMAYA tokens */
+    --amaya-blue-50: 213 100% 97%;
+    --amaya-blue-100: 214 95% 93%;
+    --amaya-blue-200: 213 97% 87%;
+    --amaya-blue-500: 217 91% 60%;
+    --amaya-blue-600: 221 83% 53%;
+    --amaya-blue-700: 224 76% 48%;
+    --amaya-blue-900: 224 71% 20%;
+
+    --amaya-success: 142 71% 45%;
+    --amaya-success-foreground: 0 0% 100%;
+    --amaya-warning: 38 92% 50%;
+    --amaya-warning-foreground: 0 0% 100%;
+    --amaya-danger: 0 84% 60%;
+    --amaya-danger-foreground: 0 0% 100%;
+    --amaya-info: 199 89% 48%;
+    --amaya-info-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 28% 17%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 213 100% 97%;
+    --sidebar-accent-foreground: 224 76% 48%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-sm;
+  }
+  .status-low {
+    @apply bg-[hsl(var(--amaya-success)/0.1)] text-[hsl(var(--amaya-success))] border border-[hsl(var(--amaya-success)/0.2)];
+  }
+  .status-moderate {
+    @apply bg-[hsl(var(--amaya-warning)/0.1)] text-[hsl(var(--amaya-warning))] border border-[hsl(var(--amaya-warning)/0.2)];
+  }
+  .status-high {
+    @apply bg-[hsl(var(--amaya-danger)/0.1)] text-[hsl(var(--amaya-danger))] border border-[hsl(var(--amaya-danger)/0.2)];
+  }
+  .status-emergency {
+    @apply bg-[hsl(var(--amaya-danger))] text-[hsl(var(--amaya-danger-foreground))] animate-pulse;
+  }
+}
